@@ -25,7 +25,7 @@ const routeConfig = routes.map((route, i) => {
             path = { route.path } 
             exact 
             render = { props => ( 
-            <route.component {...props} routes = { route.routes } />
+              <route.component {...props} routes = { route.routes } />
             )}
           />;
 })

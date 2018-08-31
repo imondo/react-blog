@@ -19,10 +19,6 @@ const routes = [
   },
 ]
 
-// const ReaderRoutes = (route) => {
-  
-// }
-
 const routeConfig = routes.map((route, i) => {
   return <Route
             key={i}

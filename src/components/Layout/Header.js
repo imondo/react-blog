@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Row, Col, Input } from 'antd';
 import Nav from './Nav';
 import './Header.less';
@@ -10,7 +11,7 @@ class Header extends Component {
       <div className="header-cover">
         <Row className="header">
           <Col span={8}>
-            Mondo
+            <Link to="/">Mondo</Link>            
           </Col>
           <Col span={8}>
             <Nav></Nav>

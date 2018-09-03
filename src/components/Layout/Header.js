@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Input } from 'antd';
 import Nav from './Nav';
-import './Header.less';
 const Search = Input.Search;
 
 class Header extends Component {

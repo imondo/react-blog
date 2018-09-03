@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom"
+import { withRouter } from "react-router-dom";
+import { timeSub } from './../../utils';
 
 class ArticleItem extends Component {  
   render() {
@@ -7,6 +8,7 @@ class ArticleItem extends Component {
     return (
       <div className="item">
         <h2 onClick={ this.goTo } data-id={article.id}>{ article.title }</h2>
+        <time>{ timeSub(article.createAt) }</time>
       </div>
     );
   }

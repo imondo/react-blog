@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Archive from './pages/Archive';
+import Detail from './pages/Home/Detail'
 
 const routes = [
   {
@@ -17,6 +18,10 @@ const routes = [
     path: '/archive',
     component: Archive
   },
+  {
+    path: '/detail/:id',
+    component: Detail
+  }
 ]
 
 const routeConfig = routes.map((route, i) => {

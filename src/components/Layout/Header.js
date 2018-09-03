@@ -11,18 +11,23 @@ class Header extends Component {
       <div className="header-cover">
         <Row className="header">
           <Col span={8}>
-            <Link to="/">Mondo</Link>            
+            <i className="icon-fa-github icon"></i>
           </Col>
-          <Col span={8}>
-            <Nav></Nav>
+          <Col span={8} className="text-center">
+            <Link to="/" className="logo">Mondo</Link>
           </Col>
-          <Col span={8}>
+          <Col span={8} className="text-rt">
             <Search
               placeholder="请输入关键词"
               onSearch={value => console.log(value)}
               style={{ width: 200 }}
-            />
-          </Col>          
+            /> 
+          </Col>             
+        </Row>
+        <Row className="nav">
+          <Col span={24} className="text-center">
+            <Nav></Nav>
+          </Col>
         </Row>
       </div>
     )

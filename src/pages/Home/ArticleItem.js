@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom"
 
-class ArticleList extends Component {
+class ArticleItem extends Component {  
   render() {
     let { article } = this.props;
     return (
       <div className="item">
-        <h2>{ article.title }</h2>
+        <h2 onClick={ this.goTo } data-id={article.id}>{ article.title }</h2>
       </div>
     );
   }
+
+  goTo = (e) => {
+    let id = e.target.dataset.id;
+    this.props.history.push(`/detail/${id}`);
+  }
 }
 
-export default ArticleList;
+export default withRouter(ArticleItem);

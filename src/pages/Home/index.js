@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from './../../axios';
-import ArticleList from './ArticleItem';
+import ArticleItem from './ArticleItem';
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -8,20 +8,18 @@ class Home extends Component {
       article: []
     }
   }
-  componentWillMount() {
-    axios.get('/api/classes/article?pageSize=9&pageNo=1')
-    .then(res => {
-      this.setState({ 
-        article: res.results
-      });
-    })
+  async componentWillMount() {
+    let list = await axios.get('/api/classes/article?pageSize=9&pageNo=1');
+    this.setState({ 
+      article: list.results
+    });
   }
   render () {
     const { article } = this.state;
     return (
       <div className="index"> 
         { article.map((val) => {
-            return (<ArticleList article = { val } key={val.id}/>);
+            return (<ArticleItem article = { val } key={val.id}/>);
           })
         }
       </div>

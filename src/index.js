@@ -8,7 +8,7 @@ import Layout from './components/Layout';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/rtblog">
     <Layout />
   </BrowserRouter>,
   document.getElementById('root'));

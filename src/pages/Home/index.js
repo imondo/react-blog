@@ -13,6 +13,8 @@ class Home extends Component {
       count: 0
     }
   }
+
+  scrollEvent = () => {}
   
   handleScroll = () => {
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -43,9 +45,7 @@ class Home extends Component {
   }
 
   componentWillUnmount() {
-    if (this.scrollEvent) {
-      this.scrollEvent.remove();
-    }
+    window.removeEventListener('scroll', this.handleScroll);    
   }
 
   render () {

@@ -6,11 +6,12 @@ import ReactMarkdown from 'react-markdown';
 class Article extends Component {
   render () {
     let { data } = this.props;
-    console.log(data)
     return (
       <div className="article-cover markdown-section">
         <h2>{ data.title }</h2>
-        <time>{ timeSub(data.createAt) }</time>
+        <time className="icon"><i className="icon-fa-calendar-check-o"></i>{ timeSub(data.createAt) }</time>
+        <span className="icon"><i className="icon-fa-tags"></i> { data.classify }</span>
+        <span className="icon"><i className="icon-fa-eye"></i> { data.views }次阅读</span>
         <ReactMarkdown  source={data.content}/>
       </div>
     );

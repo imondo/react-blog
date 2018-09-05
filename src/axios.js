@@ -1,5 +1,6 @@
 import axios from 'axios';
 import qs from 'qs';
+import nprogress from 'nprogress';
 
 axios.default.timeout = 20000; // 响应时间
 axios.defaults.withCredentials = true; // 传递cookie
@@ -8,6 +9,7 @@ axios.defaults.withCredentials = true; // 传递cookie
 
 // 参数序列化
 axios.interceptors.request.use(config => {
+  nprogress.start()
   return config;
 }, error => {
   return Promise.reject(error);
@@ -18,6 +20,7 @@ axios.interceptors.response.use(response => {
   if (response.status !== 200) {
     return Promise.reject(response);
   }
+  nprogress.done()
   return response.data;
 }, error => {
   // 错误消息提示

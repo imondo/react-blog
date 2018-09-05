@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Row, Col, Input } from 'antd';
+import { Row, Col, Input, Icon } from 'antd';
 import Nav from './Nav';
+import axios from './../../axios';
+
 const Search = Input.Search;
 
 class Header extends Component {
@@ -11,6 +13,9 @@ class Header extends Component {
         <Row className="header">
           <Col span={8}>
             <i className="icon-fa-github icon"></i>
+            <a className="icon" href="https://imondo.cn/docs">
+              <Icon type="medium" theme="outlined" />
+            </a>
           </Col>
           <Col span={8} className="text-center">
             <Link to="/" className="logo">Mondo</Link>
@@ -18,7 +23,7 @@ class Header extends Component {
           <Col span={8} className="text-rt">
             <Search
               placeholder="请输入关键词"
-              onSearch={value => console.log(value)}
+              onSearch={this.handleSearch}
               style={{ width: 200 }}
             /> 
           </Col>             
@@ -30,6 +35,11 @@ class Header extends Component {
         </Row>
       </div>
     )
+  }
+
+  handleSearch = async (value) => {
+    let searchList = await axios.get(`/api/classes/article?keyword=${value}`);
+    console.log(searchList);
   }
 }
 

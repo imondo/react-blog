@@ -101,6 +101,9 @@
   "devDependencies": {
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
-    "react-markdown": "^3.5.0"
-  }
+    "nprogress": "^0.2.0",
+    "react-markdown": "^3.5.0",
+    "react-mixin": "^4.0.0"
+  },
+  "homepage": "."
 }

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from './../../axios';
 import ArticleItem from './ArticleItem';
+import { Prompt } from 'react-router-dom';
+
 class Home extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -47,9 +50,11 @@ class Home extends Component {
 
   render () {
     const { article } = this.state;
-    console.log(article)
     return (
       <div className="index"> 
+        <Prompt message={ location => {
+          return location.pathname.includes('/demo') ? false : true;
+        }}/>
         { article.map((val) => {
             return (<ArticleItem article = { val } key={val.id}/>);
           })

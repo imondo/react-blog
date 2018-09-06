@@ -3,7 +3,8 @@ import { Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Archive from './pages/Archive';
-import Detail from './pages/Home/Detail'
+import Detail from './pages/Home/Detail';
+import Classify from './pages/Classify';
 
 const routes = [
   {
@@ -21,6 +22,14 @@ const routes = [
   {
     path: '/detail/:id',
     component: Detail
+  },
+  {
+    path: '/classify',
+    component: Classify
+  },
+  {
+    path: '/search',
+    component: Classify
   }
 ]
 

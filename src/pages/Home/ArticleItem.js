@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+import { Tooltip } from 'antd';
 import './ArticleItem.less';
 import { timeSub } from './../../utils';
 class ArticleItem extends Component {  
@@ -9,8 +10,10 @@ class ArticleItem extends Component {
       <div className="item">
         <h2 className="title" onClick={ this.goTo } data-id={article.id}>{ article.title }</h2>
         <div>
-          <span className="tag">{ article.classify } </span>
-          <time className="sup">{ timeSub(article.createAt) }</time>
+          <Link className="tag" to={{pathname: '/classify', search: `?key=${article.classify}`}}>{ article.classify }</Link>
+          <Tooltip placement="bottom" title={`发布于${article.createAt}`}>
+            <time className="sup">{ timeSub(article.createAt) }</time>
+          </Tooltip>
           <span className="sup">{ article.views }次阅读</span>
         </div>
       </div>

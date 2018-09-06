@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Row, Col, Input, Icon } from 'antd';
 import Nav from './Nav';
-import axios from './../../axios';
 
 const Search = Input.Search;
 
@@ -38,9 +37,8 @@ class Header extends Component {
   }
 
   handleSearch = async (value) => {
-    let searchList = await axios.get(`/api/classes/article?keyword=${value}`);
-    console.log(searchList);
+    this.props.history.push({pathname: '/search', search: `?keyword=${value}`, query: { keyword: value }});
   }
 }
 
-export default Header;
+export default withRouter(Header);

@@ -45,9 +45,9 @@ class Archive extends Component {
 
   async getArchiveList(data) {
     let list = data.reduce((arr, val) => {
-      let obj = { time: timeSub(val.createAt, 7), list: [] };   
-      if (arr.findIndex(v => v.time === timeSub(val.createAt, 7)) > -1) {
-        let hasObj = arr.find(v => v.time === timeSub(val.createAt, 7));
+      let obj = { time: timeSub(val.createAt, 7), list: [] };  
+      let hasObj = arr.find(v => v.time === timeSub(val.createAt, 7)); 
+      if (hasObj) {
         hasObj.list.push(val);
       } else {
         obj.list.push(val);

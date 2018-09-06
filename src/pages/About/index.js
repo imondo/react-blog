@@ -21,7 +21,7 @@ class About extends Component {
             <img className="iframe-icon" src={vueImg} alt="vue"/>            
             <span className="iframe">
               用vue + vuex + koa2 + mysql 技术栈实现的
-              <a className="vue-blog" href="https://imondo.cn" target="_blank">简单博客</a>。            
+              <a className="vue-blog" href="https://imondo.cn" target={`_blank`}>简单博客</a>。            
             </span>
           </p>
         </div>

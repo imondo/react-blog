@@ -21,7 +21,7 @@ class Header extends Component {
           <Col span={8} className="text-center">
             <Link to="/" className="logo">Mondo</Link>
           </Col>
-          <Col span={8} className="text-rt">
+          <Col span={8} className="text-rt sm-hidden">
             <Search
               placeholder="请输入关键词"
               onSearch={this.handleSearch}

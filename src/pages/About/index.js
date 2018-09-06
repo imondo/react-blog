@@ -3,15 +3,6 @@ import { Icon, Tooltip } from 'antd';
 import './index.less';
 class About extends Component {
 
-  componentWillMount() {
-    var a=1,b={};
-    b.v=1;
-    var a1=a,b1=b;
-    a1=2;
-    b1.v=2;
-    console.log(a, b);
-  }
-
   render () {
     return (
       <div className="avatar-cover">

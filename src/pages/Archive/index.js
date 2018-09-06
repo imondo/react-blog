@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item';
-import { Timeline } from 'antd';
+import { Timeline, Row } from 'antd';
 import axios from './../../axios';
 import { timeSub } from './../../utils';
 
@@ -11,9 +11,13 @@ class ArchiveItem extends Component {
       <div className="archive-item">
         <span className="common-title">{ data.time }</span>
         <div className="post-lists">
-          { data.list.map(val => {
-            return <Item data={val} key={val.id}/>
-          }) }
+          <Row>
+            { 
+              data.list.map(val => {            
+                return <Item data={val} key={val.id}/>;
+              })
+            }
+          </Row>
         </div>
       </div>
     );

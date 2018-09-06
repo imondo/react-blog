@@ -11,7 +11,9 @@ class Header extends Component {
       <div className="header-cover">
         <Row className="header">
           <Col span={8}>
-            <i className="icon-fa-github icon"></i>
+            <a className="icon" href="https://github.com/one-pupil">
+              <i className="icon-fa-github icon"></i>            
+            </a>
             <a className="icon" href="https://imondo.cn/docs">
               <Icon type="medium" theme="outlined" />
             </a>

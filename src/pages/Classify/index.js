@@ -22,10 +22,10 @@ class Classify extends Component {
   }
 
   getAllData() {
-    let { history: { location: { search } } } = this.props;
+    let { history: { location: { search, pathname } } } = this.props;
     let key = this.getKey(search);
     let data = this.getKeyVal(search, key);
-    let isSearch = this.props.location.pathname.includes('/search');
+    let isSearch = pathname.includes('/search');
     this.setState({ classify: decodeURI(data), isSearch });
     this.getList(data, key);
   }

@@ -39,7 +39,11 @@ class Header extends Component {
   }
 
   handleSearch = async (value) => {
-    this.props.history.push({pathname: '/search', search: `?keyword=${value}`, query: { keyword: value }});
+    if (value) {
+      this.props.history.push({pathname: '/search', search: `?keyword=${value}`, query: { keyword: value }});
+    } else {
+      this.props.history.push({pathname: '/'});
+    }
   }
 }
 

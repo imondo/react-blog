@@ -1,23 +1,24 @@
-import React, { Component } from 'react';
-import nprogress from 'nprogress';
+import * as React from 'react';
+import * as nprogress from 'nprogress';
 import Header from './Header';
 import MainContent from './Main'
 import { BackTop } from 'antd';
 import './index.less';
-class Layout extends Component {
-  componentWillMount () {
+class Layout extends React.Component<{}, {}, any> {
+  public componentWillMount () {
     nprogress.start()
   }
 
-  componentDidMount () {
+  public componentDidMount () {
     nprogress.done()
   }
 
-  render () {
+  public render () {
+    const { children } = this.props;
     return (
       <div className="layout-wrapper">
         <Header />
-        <MainContent/>
+        <MainContent children={children}/>
         <BackTop>
           <div className="back-top-inner">UP</div>
         </BackTop>

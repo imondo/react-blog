@@ -8,7 +8,9 @@ class ArticleItem extends Component {
     let { article } = this.props;
     return (
       <div className="item">
-        <h2 className="title" onClick={ this.goTo } data-id={article.id}>{ article.title }</h2>
+        <Link to={{pathname: `/detail/${article.id}`}}>
+          <h2 className="title">{ article.title }</h2>
+        </Link>
         <div>
           <Link className="tag" to={{pathname: '/classify', search: `?key=${article.classify}`}}>{ article.classify }</Link>
           <Tooltip placement="bottom" title={`发布于${getTimeDetail(article.createAt)}`}>
@@ -18,11 +20,6 @@ class ArticleItem extends Component {
         </div>
       </div>
     );
-  }
-
-  goTo = (e) => {
-    let id = e.target.dataset.id;
-    this.props.history.push(`/detail/${id}`);
   }
 }
 

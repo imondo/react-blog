@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import routeConfig from './../../router';
-
 class MainContent extends Component {  
   render () {
+    const { children } = this.props;
     return (
       <div className="main">
-        { routeConfig }
+        { children }
       </div>
     );
   }

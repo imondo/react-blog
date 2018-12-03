@@ -35,6 +35,6 @@
     "ts-import-plugin": "^1.5.5",
     "typescript": "^3.2.1"
   },
-  "homepage": ".",
+  "homepage": "/rtblog",
   "proxy": "https://imondo.cn"
 }

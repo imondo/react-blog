@@ -3,10 +3,12 @@
   "rules": {
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "no-shadowed-variable": true
+    "no-shadowed-variable": true,
+    "no-console": false
   },
   "jsRules": {
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "no-console": false
   },
   "linterOptions": {
     "exclude": [

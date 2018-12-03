@@ -36,9 +36,9 @@ class Classify extends Component {
   }
 
   getKeyVal(data, key) {
-    let _key = key || '';
-    let num = _key.length;
-    let index = data.indexOf(`${key}=`) + num + 1;
+    let keyVal = key || '';
+    let num = keyVal.length;
+    let index = data.indexOf(`${keyVal}=`) + num + 1;
     return data.slice(index);
   }
 

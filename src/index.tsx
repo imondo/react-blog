@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './styles/font-awesome.less';
 import 'nprogress/nprogress.css';
-import './styles/index.css';
+import './styles/index.less';
 import Layout from './components/Layout';
 import registerServiceWorker from './registerServiceWorker';
 

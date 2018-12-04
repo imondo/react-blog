@@ -2,6 +2,11 @@ import * as axios from 'axios';
 import * as qs from 'qs';
 import * as nprogress from 'nprogress';
 
+interface IResData {
+  results: any;
+  [propName: string]: any;
+}
+
 const service = axios.default.create({
   timeout: 20000, // 响应时间
   withCredentials: true, // 传递cookie
@@ -30,7 +35,8 @@ export default {
   get: (url: string, data = {}) => {
     return new Promise((resolve, reject) => {
       service.get(url, { params: data }).then(response => {
-        resolve(response.data);
+        const res:IResData = response.data;
+        resolve(res);
       }).catch(error => {
         throw new Error(error);
       });

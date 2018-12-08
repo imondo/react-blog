@@ -41,21 +41,6 @@ const RouterList: IRouteMap[] = [
   }
 ];
 
-// const routeConfig = routes.map((route, i) => {
-//   return (
-//     <Route
-//       key={i}
-//       path={route.path}
-//       exact={true}
-//       // render={props => <route.component {...props} routes={route.routes} />}
-//       component={Loadable({
-//         loader: route.component,
-//         loading: Loading
-//       })}
-//     />
-//   );
-// });
-
 const RouterMap = () => (
   <Router basename="/rtblog">
     <Layout>
